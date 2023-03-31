@@ -272,7 +272,7 @@ function enumerateMovesByDelta(board, x, y, player, dx, dy, onlyOnce) {
 
   while (true) {
     x += dx;
-    x += dy;
+    y += dy;
     if (x < 0 || y < 0 || x >= sizeX || y >= sizeY) {
       return moves;
     }
