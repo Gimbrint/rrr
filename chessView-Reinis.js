@@ -65,8 +65,12 @@ class ChessBoardR extends SimpleEvent {
   }
 
   drawPieces(board) {
-    for (let i = 0; i < board.length; i++) {
-      
+    for (let x = 0; x < board.length; x++) {
+      for (let y = 0; y < board.length; y++) {
+        if (board[x][y]) {
+          this.drawPiece(x, y, board[x][y]);
+        }
+      }
     }
   }
 
