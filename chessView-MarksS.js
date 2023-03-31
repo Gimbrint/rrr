@@ -5,7 +5,6 @@ class Chessboard extends SimpleEvent {
     this.container = container;
     this.svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     this.container.appendChild(this.svg);
-
   }
 
 
