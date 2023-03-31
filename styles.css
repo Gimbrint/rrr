@@ -55,15 +55,3 @@ button{
     margin: 50px 50px 50px 50px;
     max-width: 350px;
 }
-
-b{
-    font-size: 25px;
-}
-
-.BlackSquare {
-    fill: #000000
-}
-
-.WhiteSquare {
-    fill: #dcdcdc
-}
