@@ -74,8 +74,8 @@ class ChessBoardR extends SimpleEvent {
     const xmlns = "http://www.w3.org/2000/svg";
     const piece = document.createElementNS(xmlns, "image");
     piece.setAttribute("href", "https://upload.wikimedia.org/wikipedia/commons/b/b1/Chess_blt45.svg");
-    piece.setAttribute("x", 20+x*this.size);
-    piece.setAttribute("y", 20+y*this.size);
+    piece.setAttribute("x", 20 + x * this.size);
+    piece.setAttribute("y", 20 + y * this.size);
     piece.setAttribute("width", 60);
     piece.setAttribute("height", 60);
 
