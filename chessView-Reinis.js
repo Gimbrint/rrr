@@ -27,15 +27,23 @@ class ChessBoardR extends SimpleEvent {
     this.container = container;
     this.size = size;
 
-    this.pieceImages = {
-      "B": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Chess_blt45.svg",
-      "R": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Chess_blt45.svg",
+    this.pieceImages = [{ // White
+      "K": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Chess_blt45.svg",
       "Q": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Chess_blt45.svg",
+      "R": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Chess_blt45.svg",
       "B": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Chess_blt45.svg",
-      "B": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Chess_blt45.svg",
-      "B": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Chess_blt45.svg",
+      "K": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Chess_blt45.svg",
+      "P": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Chess_blt45.svg",
       "B": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Chess_blt45.svg"
-    };
+    }, {                  // Black
+      "K": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Chess_blt45.svg",
+      "Q": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Chess_blt45.svg",
+      "R": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Chess_blt45.svg",
+      "B": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Chess_blt45.svg",
+      "K": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Chess_blt45.svg",
+      "P": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Chess_blt45.svg",
+      "B": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Chess_blt45.svg"
+    }];
 
     this.eventHandlers = {
       move: []
