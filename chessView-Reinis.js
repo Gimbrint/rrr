@@ -1,24 +1,3 @@
-class SimpleEvent {
-  constructor() {
-    this.eventHandlers = {};
-  }
-
-  addEventListener(eventType, eventHandler) {
-    // Create this type, if it doesn't allready exist!
-    if (!this.eventHandlers[eventHandler]) {
-      this.eventHandlers[eventType] = [];
-    }
-    
-    // We add a function (eventHandler) to the specified event type array
-    this.eventHandlers[eventType].push(eventHandler);
-  }
-    
-  dispatchEvents(eventType, eventInfo) {
-    // Call each function (eventHandler) of the specified event type and with the eventInfo parameter
-    this.eventHandlers[eventType].forEach(eh => eh(eventInfo));
-  }
-}
-
 class ChessBoardR extends SimpleEvent {
   constructor(container, size=60) {
     super();
@@ -73,21 +52,22 @@ class ChessBoardR extends SimpleEvent {
   }
 
   drawPieces(board) {
-    for (let i = 0; i < board.length; i++) {
-      
+    for (let x = 0; x < board.length; x++) {
+      for (let y = 0; y < board[x].length; y++) {
+        if (!board[x][y]) continue;
+
+        // Draw this piece
+        const xmlns = "http://www.w3.org/2000/svg";
+        const piece = document.createElementNS(xmlns, "image");
+        piece.setAttribute("href", "https://upload.wikimedia.org/wikipedia/commons/b/b1/Chess_blt45.svg");
+        piece.setAttribute("x", 20 + x * this.size);
+        piece.setAttribute("y", 20 + y * this.size);
+        piece.setAttribute("width", 60);
+        piece.setAttribute("height", 60);
+    
+        this.container.appendChild(piece);
+      }
     }
-  }
-
-  drawPiece(x, y) {
-    const xmlns = "http://www.w3.org/2000/svg";
-    const piece = document.createElementNS(xmlns, "image");
-    piece.setAttribute("href", "https://upload.wikimedia.org/wikipedia/commons/b/b1/Chess_blt45.svg");
-    piece.setAttribute("x", 20 + x * this.size);
-    piece.setAttribute("y", 20 + y * this.size);
-    piece.setAttribute("width", 60);
-    piece.setAttribute("height", 60);
-
-    this.container.appendChild(piece);
   }
 
   move(txtMove) {
@@ -96,7 +76,7 @@ class ChessBoardR extends SimpleEvent {
 
   update(model) {
     this.drawBoard();
-    this.drawPiece(2, 2);
+    this.drawPieces(model.board);
     console.log("here");
   }
 }

@@ -1,0 +1,47 @@
+{
+    "currentPlayer": 0,
+    "width": 8,
+    "height": 8,
+    "pieces": [
+        {
+            "player": "w",
+            "type": "R",
+            "pos": "a7"
+        },
+        {
+            "player": "b",
+            "type": "N",
+            "pos": "b7"
+        },
+        {
+            "player": "b",
+            "type": "B",
+            "pos": "c7"
+        },
+        {
+            "player": "b",
+            "type": "Q",
+            "pos": "d7"
+        },
+        {
+            "player": "b",
+            "type": "K",
+            "pos": "e7"
+        },
+        {
+            "player": "b",
+            "type": "B",
+            "pos": "f7"
+        },
+        {
+            "player": "b",
+            "type": "N",
+            "pos": "g7"
+        },
+        {
+            "player": "b",
+            "type": "R",
+            "pos": "h7"
+        }
+    ]
+}

@@ -116,6 +116,25 @@ class Board  extends SimpleEvent  {
     this.update();
   }
 
+  loadPositionFromJSON(jsonText) {
+    const data = JSON.parse(jsonText);
+
+    for (let i = 0; i < data.pieces.length; i++) {
+      const piece = data.pieces[i];
+
+      const pos = this.algebraicToInt(piece.pos);
+      const player = piece.player;
+      const type = piece.type;
+
+      this.board[pos.x][pos.y] = { player, type };
+    }
+  }
+
+  algebraicToInt(pos) {
+    const file = { "a": 0, "b": 1, "c": 2, "d": 3, "e": 4, "f": 5, "g": 6, "h": 7};
+    return { x: file[pos[0]], y: +pos[1] };
+  }
+
   addPiece(player, type) {
     // TODO: use piece data structure instead of two params
     this.board[x][y] = { player, type };
