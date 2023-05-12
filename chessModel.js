@@ -141,6 +141,8 @@ class Board  extends SimpleEvent  {
   }
 
   enumerateMoves(x,y,piece) {
+    
+
     const moves = [];
     // Returns array of legal moves: [{x:int, y:int, capture:bool}]
     const pieces = {
@@ -152,9 +154,11 @@ class Board  extends SimpleEvent  {
       "N": {"onlyOnce" : true, "moves": [{"x":1,"y":2},{"x":-1,"y":2},{"x":2,"y":1},{"x":-2,"y":1},{"x":-1,"y":-2},{"x":1,"y":-2},{"x":2,"y":-1},{"x":-2,"y":-1}]}
   
     }
+
+    const p = pieces[piece.type]
     
-    onlyOnce = pieces[piece.type].onlyOnce
-    pieces[piece.type].moves.forEach(move => {
+    const onlyOnce = p.onlyOnce
+    p.moves.forEach(move => {
       moves.push(...enumerateMovesByDelta(board, x, y, piece.player, move.x, move.y, onlyOnce));
     });
   
